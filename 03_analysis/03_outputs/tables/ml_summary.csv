@@ -1,3 +1,0 @@
-model,response_variable,n_predictors,n_observations,cv_rmse,cv_rmse_sd,cv_r2,cv_r2_sd,cv_mae
-Random Forest,regen_richness,13,192,1.165,0.182,0.142,0.04,0.907
-XGBoost,regen_richness,13,192,1.261,0.192,-0.009,0.096,0.942

@@ -1,5 +1,0 @@
-stratum,n_sites,n_species,n_env_vars,selected_variables,total_inertia,constrained_inertia,prop_explained,p_value,significant
-Trees,216,221,5,aspect; eto; latitude; longitude; slope,35.117,1.109,3.2,0.008,TRUE
-Shrubs,194,101,5,aspect; eto; latitude; longitude; slope,27.832,1.045,3.8,0.001,TRUE
-Herbs,206,134,5,aspect; eto; latitude; longitude; slope,68.475,2.309,3.4,0.125,FALSE
-Regen,205,109,5,aspect; eto; latitude; longitude; slope,58.906,1.987,3.4,0.076,FALSE
