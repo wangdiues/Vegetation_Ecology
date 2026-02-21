@@ -55,3 +55,7 @@ make all
 - `renv.lock` captures exact package versions
 - `sessionInfo.txt` records R session details
 - `RUN_METADATA.json` logs each pipeline run
+
+## Data Availability
+
+The data supporting the findings of this study are available in the Supporting Information (Appendices S1–S10). Processed community matrices, environmental predictors, and statistical outputs are archived in the project repository accompanying this submission. A public repository with a DOI will be provided upon manuscript acceptance to ensure reproducibility and transparency: https://github.com/wangdiues/Vegetation_Ecology
