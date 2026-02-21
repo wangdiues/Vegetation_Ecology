@@ -52,10 +52,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   python-validator:
+    if: ${{ hashFiles('04_reference_Validator/reference_validator.py') != '' }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 04_reference_Validator
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -66,6 +64,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f 04_reference_Validator/requirements.txt ]; then pip install -r 04_reference_Validator/requirements.txt; fi
       - name: Syntax check
-        run: python -m py_compile reference_validator.py
+        run: python -m py_compile 04_reference_Validator/reference_validator.py

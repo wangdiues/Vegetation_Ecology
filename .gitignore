@@ -63,3 +63,16 @@ venv/
 *.rda
 *.RData
 *.dll
+
+# Private local-only project folders
+00_main/
+02_default_manuscript/
+04_reference_Validator/
+05_academic_paper_reviewer/
+06_converted_to_JVS/
+IMPLEMENTATION_REPORT.md
+
+# Keep only analysis scripts public
+03_analysis/*
+!03_analysis/05_scripts/
+!03_analysis/05_scripts/**
