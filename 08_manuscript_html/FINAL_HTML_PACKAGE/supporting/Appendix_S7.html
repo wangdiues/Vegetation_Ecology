@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S7 - Cross-Validation Fold Results</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S7: Cross-Validation Fold Results</h1>
+        <p>Detailed five-fold cross-validation metrics for random forest and XGBoost models predicting regeneration richness. Random seed = 42 for reproducibility.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S07_CV_fold_results.csv" class="download-link">Appendix_S07_CV_fold_results.csv</a></p>
+        
+        <h2>Random Forest Fold Results</h2>
+        <table>
+            <thead><tr><th>Fold</th><th>RMSE</th><th>R²</th><th>MAE</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>1.127</td><td>0.193</td><td>0.876</td></tr>
+                <tr><td>2</td><td>1.082</td><td>0.137</td><td>0.845</td></tr>
+                <tr><td>3</td><td>0.999</td><td>0.171</td><td>0.782</td></tr>
+                <tr><td>4</td><td>1.476</td><td>0.096</td><td>1.125</td></tr>
+                <tr><td>5</td><td>1.140</td><td>0.111</td><td>0.907</td></tr>
+                <tr><td><strong>Mean ± SD</strong></td><td><strong>1.165 ± 0.182</strong></td><td><strong>0.142 ± 0.040</strong></td><td><strong>0.907</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h2>XGBoost Fold Results</h2>
+        <table>
+            <thead><tr><th>Fold</th><th>RMSE</th><th>R²</th><th>MAE</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>1.231</td><td>0.038</td><td>0.956</td></tr>
+                <tr><td>2</td><td>1.101</td><td>0.106</td><td>0.867</td></tr>
+                <tr><td>3</td><td>1.105</td><td>-0.014</td><td>0.878</td></tr>
+                <tr><td>4</td><td>1.570</td><td>-0.022</td><td>1.234</td></tr>
+                <tr><td>5</td><td>1.299</td><td>-0.154</td><td>0.976</td></tr>
+                <tr><td><strong>Mean ± SD</strong></td><td><strong>1.261 ± 0.192</strong></td><td><strong>-0.009 ± 0.096</strong></td><td><strong>0.942</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Diagnostics Interpretation</h2>
+        <p>Fold-level diagnostics showed moderate variability in RF performance (R² range: 0.096–0.193; RMSE range: 0.999–1.476) and unstable XGBoost performance (R² range: -0.154 to 0.106; RMSE range: 1.102–1.570), reinforcing that coarse predictors provide only weak predictability of recruitment.</p>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

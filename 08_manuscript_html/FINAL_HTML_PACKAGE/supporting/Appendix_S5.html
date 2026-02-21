@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S5 - Machine Learning Parameters</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+        code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S5: Machine-Learning Model Parameters</h1>
+        <p>Complete hyperparameter specifications for random forest and extreme gradient boosting (XGBoost) models used to predict regeneration richness.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S05_ML_parameters.csv" class="download-link">Appendix_S05_ML_parameters.csv</a></p>
+        
+        <h2>Random Forest Parameters</h2>
+        <table>
+            <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Number of trees (ntree)</td><td>500</td></tr>
+                <tr><td>Variables tried at each split (mtry)</td><td>4</td></tr>
+                <tr><td>Minimum node size</td><td>5</td></tr>
+                <tr><td>Random seed</td><td>42</td></tr>
+                <tr><td>Importance metric</td><td>% Increase in MSE</td></tr>
+            </tbody>
+        </table>
+
+        <h2>XGBoost Parameters</h2>
+        <table>
+            <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Number of boosting rounds</td><td>100</td></tr>
+                <tr><td>Maximum tree depth</td><td>4</td></tr>
+                <tr><td>Learning rate (eta)</td><td>0.1</td></tr>
+                <tr><td>Subsample ratio</td><td>0.8</td></tr>
+                <tr><td>Column sample by tree</td><td>0.8</td></tr>
+                <tr><td>Random seed</td><td>42</td></tr>
+                <tr><td>Objective</td><td>reg:squarederror</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Cross-Validation Summary</h2>
+        <table>
+            <thead><tr><th>Model</th><th>Predictors</th><th>Obs.</th><th>CV R²</th><th>CV RMSE</th><th>CV MAE</th></tr></thead>
+            <tbody>
+                <tr><td>Random Forest</td><td>13</td><td>192</td><td>0.142 ± 0.040</td><td>1.165 ± 0.182</td><td>0.907</td></tr>
+                <tr><td>XGBoost</td><td>13</td><td>192</td><td>-0.009 ± 0.096</td><td>1.261 ± 0.192</td><td>0.942</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Interpretation</h2>
+        <p>Given the low explanatory power, these models are interpreted as exploratory ecological inference rather than deterministic prediction. Important drivers—such as canopy openness, disturbance history, soil properties or fine-scale moisture regimes—were not fully captured by the available predictors.</p>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

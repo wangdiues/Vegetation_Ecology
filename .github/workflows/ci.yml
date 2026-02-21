@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  file-size-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fail on oversized tracked files
+        run: |
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+
+          limit = 95 * 1024 * 1024
+          offenders = []
+          out = subprocess.check_output(["git", "ls-files"], text=True)
+          for rel in out.splitlines():
+            if not rel:
+              continue
+            if os.path.isfile(rel):
+              size = os.path.getsize(rel)
+              if size >= limit:
+                offenders.append((size, rel))
+
+          if offenders:
+            for size, rel in sorted(offenders, reverse=True):
+              print(f"{size / (1024*1024):.2f} MB\t{rel}")
+            sys.exit("Tracked file size check failed.")
+          print("Tracked file size check passed.")
+          PY
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  python-validator:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 04_reference_Validator
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Syntax check
+        run: python -m py_compile reference_validator.py

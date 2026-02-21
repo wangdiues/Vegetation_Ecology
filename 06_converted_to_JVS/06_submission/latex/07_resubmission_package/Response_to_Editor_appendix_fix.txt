@@ -1,0 +1,19 @@
+Dear Journal of Vegetation Science Editorial Office,
+
+Thank you for returning our manuscript to draft for corrections.
+
+We have addressed the requested update regarding figures/tables and supporting appendix materials as follows:
+
+1. Figure files are provided (Figure01-Figure07; PNG format).
+2. Table files are provided (Table01-Table05; CSV format).
+3. Appendix files are now provided as separate supporting files (Appendix S1-S10; CSV format).
+
+The manuscript cites Appendix S1-S10 in the text, and all corresponding appendix files are included for upload as Supporting Information/Appendix files.
+
+Manuscript title:
+Vegetation Community Composition and Species-Environment Relationships Along an Elevational Gradient in South-Central Bhutan
+
+Please let us know if you require any additional file format or naming adjustments.
+
+Sincerely,
+[Corresponding Author Name]

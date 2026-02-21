@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S1 - Variance Inflation Factor Screening</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S1: Variance Inflation Factor (VIF) Screening</h1>
+        <p>Results for all candidate environmental predictors in trees, shrubs, herbs, and regeneration strata. Variables exceeding a threshold of 10 were sequentially removed following deterministic selection rules.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S01_VIF_all_strata.csv" class="download-link">Appendix_S01_VIF_all_strata.csv</a></p>
+        
+        <h2>Trees Stratum</h2>
+        <table>
+            <thead><tr><th>Variable</th><th>VIF</th><th>Retained</th></tr></thead>
+            <tbody>
+                <tr><td>aspect</td><td>1.02</td><td>Yes</td></tr>
+                <tr><td>eto</td><td>1.60</td><td>Yes</td></tr>
+                <tr><td>latitude</td><td>1.60</td><td>Yes</td></tr>
+                <tr><td>longitude</td><td>1.17</td><td>Yes</td></tr>
+                <tr><td>slope</td><td>1.15</td><td>Yes</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Shrubs Stratum</h2>
+        <table>
+            <thead><tr><th>Variable</th><th>VIF</th><th>Retained</th></tr></thead>
+            <tbody>
+                <tr><td>aspect</td><td>1.02</td><td>Yes</td></tr>
+                <tr><td>eto</td><td>1.66</td><td>Yes</td></tr>
+                <tr><td>latitude</td><td>1.71</td><td>Yes</td></tr>
+                <tr><td>longitude</td><td>1.15</td><td>Yes</td></tr>
+                <tr><td>slope</td><td>1.13</td><td>Yes</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Herbs Stratum</h2>
+        <table>
+            <thead><tr><th>Variable</th><th>VIF</th><th>Retained</th></tr></thead>
+            <tbody>
+                <tr><td>aspect</td><td>1.02</td><td>Yes</td></tr>
+                <tr><td>eto</td><td>1.63</td><td>Yes</td></tr>
+                <tr><td>latitude</td><td>1.64</td><td>Yes</td></tr>
+                <tr><td>longitude</td><td>1.17</td><td>Yes</td></tr>
+                <tr><td>slope</td><td>1.15</td><td>Yes</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Regeneration Stratum</h2>
+        <table>
+            <thead><tr><th>Variable</th><th>VIF</th><th>Retained</th></tr></thead>
+            <tbody>
+                <tr><td>aspect</td><td>1.02</td><td>Yes</td></tr>
+                <tr><td>eto</td><td>1.65</td><td>Yes</td></tr>
+                <tr><td>latitude</td><td>1.68</td><td>Yes</td></tr>
+                <tr><td>longitude</td><td>1.16</td><td>Yes</td></tr>
+                <tr><td>slope</td><td>1.14</td><td>Yes</td></tr>
+            </tbody>
+        </table>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+reference_id,first_author,year,raw
+REF_0004,Bray,1957,"Bray, J. R., & Curtis, J. T. (1957). An ordination of the upland forest communities of southern Wisconsin. Ecological Monographs, 27, 325–349. https://doi.org/10.2307/1942268"
+REF_0005,Breiman,2001,"Breiman, L. (2001). Random forests. Machine Learning, 45, 5–32. https://doi.org/10.1023/A:1010933404324"
+REF_0008,Dufrêne,1997,"Dufrêne, M., & Legendre, P. (1997). Species assemblages and indicator species: The need for a flexible asymmetrical approach. Ecological Monographs, 67, 345–366. https://doi.org/10.2307/2963459"
+REF_0009,Elith,2008,"Elith, J., Leathwick, J. R., & Hastie, T. (2008). A working guide to boosted regression trees. Journal of Animal Ecology, 77, 802–813. https://doi.org/10.1111/j.1365-2656.2008.01390.x"
+REF_0030,Wangda,2006b,"Wangda, P., & Ohsawa, M. (2006b). Gradational forest change along the climatically dry valley slopes of Bhutan in the midst of humid eastern Himalaya. Plant Ecology, 186, 109–128. https://doi.org/10.1007/s11258-006-9116-0"
+REF_0032,Figure captions,,Figure captions
+REF_0033,Figure 1.,,Figure 1.
+REF_0034,Non-metric multidimensional scaling (NMDS) ordinations of vegetation plots for four strata: (A) trees,,"Non-metric multidimensional scaling (NMDS) ordinations of vegetation plots for four strata: (A) trees, (B) shrubs, (C) herbs and (D) regeneration. Points represent sample plots coloured by forest type; polygons delineate convex hulls for each forest type. Red arrows indicate fitted environmental vectors significant at p < 0.05 based on 999 permutations. Stress values are shown for each ordination."
+REF_0035,Figure 2.,,Figure 2.
+REF_0036,Alpha-diversity metrics across vegetation strata. Panels show (A) species richness,,"Alpha-diversity metrics across vegetation strata. Panels show (A) species richness, (B) Shannon diversity (H′), (C) Simpson diversity (1 – D) and (D) Pielou’s evenness (J). Boxplots depict medians and interquartile ranges; points represent individual plots."
+REF_0037,Figure 3.,,Figure 3.
+REF_0038,Sample-based species accumulation curves for herbs,,"Sample-based species accumulation curves for herbs, regeneration, shrubs and trees. Solid lines indicate mean richness across random permutations; shaded envelopes show 95% confidence intervals."
+REF_0039,Figure 4.,,Figure 4.
+REF_0040,Canonical correspondence analysis (CCA) biplots for (A) trees,,"Canonical correspondence analysis (CCA) biplots for (A) trees, (B) shrubs, (C) herbs and (D) regeneration. Points represent plots and arrows denote environmental predictors retained after variance inflation factor screening (threshold = 10). Arrow length indicates the strength of correlations with ordination axes."
+REF_0041,Figure 5.,,Figure 5.
+REF_0042,Random-forest variable-importance ranking for predictors of regeneration richness. Bars show percentage increase in mean squared error (%IncMSE) following permutation of each variable during five-fold cross-validation. Higher values indicate stronger influence on predictive accuracy.,,Random-forest variable-importance ranking for predictors of regeneration richness. Bars show percentage increase in mean squared error (%IncMSE) following permutation of each variable during five-fold cross-validation. Higher values indicate stronger influence on predictive accuracy.
+REF_0043,Figure 6.,,Figure 6.
+REF_0044,Variation in plot-level species richness along the elevational gradient for herbs,,"Variation in plot-level species richness along the elevational gradient for herbs, regeneration, shrubs and trees. Curves represent locally weighted regression fits with 95% confidence bands."
+REF_0045,Table captions,,Table captions
+REF_0046,Table 2.,,Table 2.
+REF_0047,Results of permutational multivariate analysis of variance (PERMANOVA) and tests of multivariate dispersion for vegetation strata across forest types. p-values are based on 999 permutations.,,Results of permutational multivariate analysis of variance (PERMANOVA) and tests of multivariate dispersion for vegetation strata across forest types. p-values are based on 999 permutations.
+REF_0048,Table 3.,,Table 3.
+REF_0049,Summary of canonical correspondence analyses by vegetation stratum. Environmental variables were selected following iterative variance inflation factor screening (threshold = 10). Significance of constrained inertia was assessed using 999 permutations.,,Summary of canonical correspondence analyses by vegetation stratum. Environmental variables were selected following iterative variance inflation factor screening (threshold = 10). Significance of constrained inertia was assessed using 999 permutations.
+REF_0050,Table 4.,,Table 4.
+REF_0051,Mean alpha-diversity metrics by vegetation stratum. Values are mean ± standard deviation.,,Mean alpha-diversity metrics by vegetation stratum. Values are mean ± standard deviation.
+REF_0052,Table 5.,,Table 5.
+REF_0053,Summary of indicator-species analysis by stratum. Groups were defined by elevational class (low,,"Summary of indicator-species analysis by stratum. Groups were defined by elevational class (low, mid and high). Significance was assessed using 999 permutations at α = 0.05."
+REF_0054,Table 6.,,Table 6.
+REF_0055,Cross-validated performance of machine-learning models predicting regeneration richness across five folds. R² denotes coefficient of determination; RMSE,,"Cross-validated performance of machine-learning models predicting regeneration richness across five folds. R² denotes coefficient of determination; RMSE, root mean square error; MAE, mean absolute error. Full fold-level output is provided in Appendix S7."
+REF_0056,Supporting information,,Supporting information
+REF_0057,Appendix S1. TableS1_VIF_all_strata.csv — Variance inflation factor screening by stratum.,,Appendix S1. TableS1_VIF_all_strata.csv — Variance inflation factor screening by stratum.
+REF_0058,Appendix S2. TableS2_PERMANOVA_full.csv — Full PERMANOVA and dispersion outputs.,,Appendix S2. TableS2_PERMANOVA_full.csv — Full PERMANOVA and dispersion outputs.
+REF_0059,Appendix S3. TableS3_envfit_all.csv — Envfit results for all strata.,,Appendix S3. TableS3_envfit_all.csv — Envfit results for all strata.
+REF_0060,Appendix S4. TableS4_indicator_species_full.csv — Indicator species list.,,Appendix S4. TableS4_indicator_species_full.csv — Indicator species list.
+REF_0061,Appendix S5. TableS5_ML_parameters.csv — Machine-learning model parameters.,,Appendix S5. TableS5_ML_parameters.csv — Machine-learning model parameters.
+REF_0062,Appendix S6. TableS6_variable_importance.csv — Variable importance outputs.,,Appendix S6. TableS6_variable_importance.csv — Variable importance outputs.
+REF_0063,Appendix S7. TableS7_CV_fold_results.csv — Cross-validation fold results.,,Appendix S7. TableS7_CV_fold_results.csv — Cross-validation fold results.
+REF_0064,Appendix S8. TableS8_diversity_correlations.csv — Diversity correlation matrix.,,Appendix S8. TableS8_diversity_correlations.csv — Diversity correlation matrix.
+REF_0065,Appendix S9. TableS9_beta_diversity.csv — Beta diversity metrics.,,Appendix S9. TableS9_beta_diversity.csv — Beta diversity metrics.
+REF_0066,Appendix S10. TableS10_matrix_diagnostics.csv — Community matrix diagnostics.,,Appendix S10. TableS10_matrix_diagnostics.csv — Community matrix diagnostics.

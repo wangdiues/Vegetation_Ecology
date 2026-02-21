@@ -1,0 +1,5 @@
+stratum,n_plots,richness_mean,richness_sd,richness_min,richness_max,shannon_mean,shannon_sd,simpson_mean,evenness_mean
+Herbs,210,1.79,1.32,1,9,0.325,0.451,0.193,0.804
+Regeneration,209,2,1.26,1,7,0.443,0.499,0.264,0.839
+Shrubs,198,4.77,3.43,1,15,1.063,0.706,0.524,0.832
+Trees,221,5.3,2.57,1,14,1.391,0.595,0.665,0.903

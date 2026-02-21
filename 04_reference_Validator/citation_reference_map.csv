@@ -1,0 +1,64 @@
+citation_raw,citation_author,citation_year,location,matched_reference_id,status
+Lomolino 2001,Lomolino,2001,p10,REF_0017,matched
+Rahbek 2005,Rahbek,2005,p10,REF_0023,matched
+Grytnes 2003,Grytnes,2003,p10,,missing
+McCain 2009,McCain,2009,p10,REF_0018,matched
+Gilliam 2007,Gilliam,2007,p10,REF_0010,matched
+Sundqvist et al. 2013,Sundqvist,2013,p10,REF_0027,matched
+Qian et al. 2005,Qian,2005,p10,REF_0022,matched
+Siefert et al. 2013,Siefert,2013,p10,REF_0026,matched
+Kraft et al. 2015,Kraft,2015,p10,REF_0014,matched
+Gilliam 2007,Gilliam,2007,p10,REF_0010,matched
+Lenoir et al. 2008,Lenoir,2008,p10,REF_0016,matched
+Clark et al. 2014,Clark,2014,p10,REF_0007,matched
+Myers et al. 2000,Myers,2000,p11,REF_0019,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p11,REF_0012,matched
+Myers et al. 2000,Myers,2000,p11,REF_0019,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p11,REF_0012,matched
+Sundqvist et al. 2013,Sundqvist,2013,p11,REF_0027,matched
+Clark et al. 2014,Clark,2014,p11,REF_0007,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p15,REF_0012,matched
+Körner 2007,Körner,2007,p15,REF_0013,matched
+Bookhagen & Burbank 2010,Bookhagen,2010,p16,REF_0003,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p16,REF_0012,matched
+accessed 6 February 2026,accessed 6 February,2026,p23,,missing
+Abrams et al. (2020),Abrams,2020,p26,REF_0001,matched
+"Grytnes & Vetaas, 2002",Grytnes,2002,p26,REF_0012,matched
+"Körner, 2007","Körner,",2007,p26,,missing
+Dorji et al. (2025),Dorji,2025,p27,,missing
+Shannon 1948,Shannon,1948,p29,REF_0024,matched
+Simpson 1949,Simpson,1949,p29,REF_0025,matched
+Pielou 1966,Pielou,1966,p29,REF_0021,matched
+Bray and Curtis 1957,Bray and Curtis,1957,p31,,missing
+Kruskal 1964,Kruskal,1964,p31,REF_0015,matched
+ter Braak 1986,ter Braak,1986,p31,REF_0028,matched
+Anderson 2001,Anderson,2001,p32,REF_0002,matched
+Dufrêne and Legendre 1997,Dufrêne and Legendre,1997,p34,,missing
+Chen & Guestrin 2016,Chen,2016,p36,REF_0006,matched
+ter Braak 1986,ter Braak,1986,p39,REF_0028,matched
+Anderson 2001,Anderson,2001,p39,REF_0002,matched
+Dufrêne and Legendre 1997,Dufrêne and Legendre,1997,p39,,missing
+Wangda & Ohsawa 2006a,Wangda,2006a,p47,REF_0029,matched
+Wangda & Ohsawa 2006a,Wangda,2006a,p51,REF_0029,matched
+Grierson & Long 1983–2001,Grierson,1983,p51,REF_0011,matched
+Wangda & Ohsawa 2006a,Wangda,2006a,p55,REF_0029,matched
+"Wangda & Ohsawa 2006a, 2006c",Wangda,2006a,p58,REF_0029,matched
+Wangda & Ohsawa 2006,Wangda,2006,p59,,missing
+Grytnes & Vetaas 2002,Grytnes,2002,p59,REF_0012,matched
+Wangda & Ohsawa 2006c,Wangda,2006c,p67,REF_0031,matched
+"Elith, Leathwick & Hastie 2008","Elith, Leathwick",2008,p68,,missing
+Ohsawa (2006),Ohsawa,2006,p71,,missing
+Wangda & Ohsawa 2006a,Wangda,2006a,p71,REF_0029,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p71,REF_0012,matched
+Acharya et al. 2011,Acharya,2011,p71,,missing
+Carpenter 2005,Carpenter,2005,p71,,missing
+Wangda & Ohsawa 2006,Wangda,2006,p71,,missing
+Ohsawa 1995,Ohsawa,1995,p71,REF_0020,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p71,REF_0012,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p73,REF_0012,matched
+Wangda & Ohsawa 2006,Wangda,2006,p73,,missing
+Grytnes & Vetaas 2002,Grytnes,2002,p73,REF_0012,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p75,REF_0012,matched
+Grytnes & Vetaas 2002,Grytnes,2002,p75,REF_0012,matched
+Ohsawa 1995,Ohsawa,1995,p77,REF_0020,matched
+Ohsawa (2006),Ohsawa,2006,p79,,missing

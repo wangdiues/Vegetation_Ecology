@@ -1,0 +1,5 @@
+stratum,n_rows_raw,n_plots_after_species_filter,n_species,chosen_value_column,pct_na_plotid,pct_na_species
+Trees,2134,221,222,dbh_cm,0,0
+Shrubs,1394,209,114,cover_percentage,0.6456241032998565,0.2152080344332855
+Herbs,410,210,134,cover,0.4878048780487805,0
+Regeneration,451,211,109,plot_cover,0.6651884700665188,0

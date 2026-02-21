@@ -1,0 +1,65 @@
+# Secrets and local credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*id_rsa*
+*id_ed25519*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+
+# Local assistant/session metadata
+.claude/
+
+# Python/R virtual env and caches
+.venv/
+venv/
+**/renv/library/
+**/renv/cache/
+**/00_admin/renv/
+
+# LaTeX and build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex*
+*.fdb_latexmk
+*.fls
+*_minted-*/
+
+# Temporary/archive artifacts
+*.tmp
+*.bak
+*.zip
+
+# Specific publication build logs
+06_converted_to_JVS/06_submission/latex/_miktex_logs/
+06_converted_to_JVS/06_submission/tectonic
+
+# R/session local state
+.Rhistory
+.RData
+.Rproj.user/
+
+# Generated analysis artifacts (rebuild from scripts)
+03_analysis/01_logs/
+03_analysis/02_checkpoints/
+03_analysis/04_results/
+
+# Heavy binary outputs
+*.rds
+*.rda
+*.RData
+*.dll

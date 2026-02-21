@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S8 - Diversity Correlations</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+        .positive { color: #2e7d32; }
+        .negative { color: #c62828; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S8: Diversity Correlation Matrix</h1>
+        <p>Pearson correlation coefficients among alpha diversity metrics across vegetation strata and environmental variables.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S08_diversity_correlations.csv" class="download-link">Appendix_S08_diversity_correlations.csv</a></p>
+        
+        <h2>Correlation Matrix: Diversity Metrics by Stratum</h2>
+        <table>
+            <thead>
+                <tr><th>Metric Pair</th><th>r</th><th>p-value</th><th>Interpretation</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Trees Richness – Trees Shannon</td><td>0.89</td><td>&lt;0.001</td><td class="positive">Strong positive</td></tr>
+                <tr><td>Shrubs Richness – Shrubs Shannon</td><td>0.92</td><td>&lt;0.001</td><td class="positive">Strong positive</td></tr>
+                <tr><td>Herbs Richness – Herbs Shannon</td><td>0.87</td><td>&lt;0.001</td><td class="positive">Strong positive</td></tr>
+                <tr><td>Regeneration Richness – Regeneration Shannon</td><td>0.85</td><td>&lt;0.001</td><td class="positive">Strong positive</td></tr>
+                <tr><td>Trees Richness – Shrubs Richness</td><td>0.34</td><td>&lt;0.001</td><td class="positive">Weak positive</td></tr>
+                <tr><td>Trees Richness – Herbs Richness</td><td>0.12</td><td>0.078</td><td>Not significant</td></tr>
+                <tr><td>Trees Richness – Regeneration Richness</td><td>0.28</td><td>&lt;0.001</td><td class="positive">Weak positive</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Correlation with Elevation</h2>
+        <table>
+            <thead>
+                <tr><th>Stratum</th><th>Richness vs. Elevation (r)</th><th>Shannon vs. Elevation (r)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Trees</td><td>-0.08 (p = 0.234)</td><td>-0.05 (p = 0.456)</td></tr>
+                <tr><td>Shrubs</td><td>0.31 (p &lt; 0.001)</td><td>0.28 (p &lt; 0.001)</td></tr>
+                <tr><td>Herbs</td><td>-0.15 (p = 0.032)</td><td>-0.12 (p = 0.082)</td></tr>
+                <tr><td>Regeneration</td><td>0.09 (p = 0.198)</td><td>0.11 (p = 0.112)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Interpretation</h2>
+        <p>Shrubs displayed a unimodal mid-elevation peak in richness, whereas trees showed comparatively stable richness across the sampled range, and herbs and regeneration exhibited weaker, irregular trends. These responses align with Himalayan studies reporting mid-elevation richness peaks and altitudinal zonation in woody layers.</p>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

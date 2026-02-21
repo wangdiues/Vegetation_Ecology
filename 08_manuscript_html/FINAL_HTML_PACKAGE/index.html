@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetation Community Composition and Species–Environment Relationships Along an Elevational Gradient in South-Central Bhutan</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --accent-color: #b30000;
+            --text-color: #222;
+            --bg-color: #fff;
+            --sidebar-bg: #f5f7fa;
+            --font-serif: "Times New Roman", Times, serif;
+            --font-sans: "Arial", Helvetica, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #eef2f5;
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        #toc {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            background: var(--sidebar-bg);
+            border-right: 1px solid #d1d5db;
+            padding: 25px 15px;
+            overflow-y: auto;
+            font-family: var(--font-sans);
+            font-size: 0.9em;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+        #toc h3 { font-size: 1.1em; color: var(--primary-color); margin-top: 0; text-transform: uppercase; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        #toc ul { list-style: none; padding: 0; margin: 0; }
+        #toc li { margin-bottom: 8px; }
+        #toc a { text-decoration: none; color: #444; display: block; padding: 4px 8px; border-radius: 4px; transition: background 0.2s, color 0.2s; }
+        #toc a:hover { background: #e0e7ff; color: var(--primary-color); }
+        #toc .sub { padding-left: 20px; font-size: 0.9em; color: #666; }
+
+        /* Main Content Container */
+        main {
+            margin-left: 280px;
+            flex-grow: 1;
+            padding: 50px 80px;
+            max-width: 1000px;
+            background: var(--bg-color);
+            box-shadow: 0 0 25px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            margin-right: auto;
+        }
+
+        /* Headers */
+        h1 { font-size: 2.4em; color: #000; line-height: 1.2; margin-bottom: 10px; text-align: center; font-weight: bold; }
+        h2 { font-family: var(--font-sans); font-size: 1.5em; color: var(--primary-color); margin-top: 2.5em; border-bottom: 2px solid #eee; padding-bottom: 5px; font-weight: bold; }
+        h3 { font-family: var(--font-sans); font-size: 1.2em; color: #333; margin-top: 2em; font-weight: bold; }
+        h4 { font-family: var(--font-sans); font-size: 1.1em; color: #555; margin-top: 1.5em; font-style: italic; }
+
+        /* Title Page Info */
+        .header-info { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .authors { font-family: var(--font-sans); font-size: 1.1em; font-weight: bold; margin-bottom: 15px; color: #333; }
+        .affiliations { font-size: 0.9em; font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.4; }
+        .correspondence { font-size: 0.85em; color: #666; background: #f9f9f9; display: inline-block; padding: 10px 20px; border-radius: 20px; text-align: left; }
+        .orcid-link { color: #555; text-decoration: none; font-size: 0.9em; }
+        .orcid-link:hover { color: var(--accent-color); }
+        
+        /* PDF Download Button */
+        .pdf-download-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            background: var(--primary-color); 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-family: var(--font-sans);
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .pdf-download-btn:hover { background: #002244; color: white; text-decoration: none; }
+
+        /* Abstract */
+        .abstract-box { background: #f8f9fa; border: 1px solid #e9ecef; padding: 30px; margin-bottom: 40px; border-left: 5px solid var(--primary-color); }
+        .abstract-box h2 { margin-top: 0; border: none; font-size: 1.3em; color: var(--primary-color); }
+        .abstract-text { font-size: 0.95em; margin-bottom: 1em; text-align: justify; }
+        .keywords { font-family: var(--font-sans); font-size: 0.9em; margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; font-style: italic; }
+
+        /* Figures & Tables */
+        .figure { margin: 40px 0; text-align: center; page-break-inside: avoid; }
+        .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px; background: #fff; }
+        .caption { margin-top: 10px; font-size: 0.9em; color: #444; text-align: justify; width: 90%; margin-left: auto; margin-right: auto; line-height: 1.4; }
+        .caption b { color: var(--primary-color); }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: var(--font-sans); font-size: 0.85em; }
+        th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        th { background-color: #f2f2f2; border-bottom: 2px solid #666; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        tr:hover { background-color: #f1f1f1; }
+
+        /* Scrollable Table Wrapper */
+        .table-wrapper { overflow-x: auto; margin-bottom: 30px; border: 1px solid #eee; padding: 5px; }
+
+        /* Citations & Links */
+        a.citation { color: var(--accent-color); text-decoration: none; }
+        a.citation:hover { text-decoration: underline; }
+
+        /* Bibliography */
+        .references { font-size: 0.9em; line-height: 1.5; padding-left: 2em; text-indent: -2em; margin-bottom: 10px; }
+
+        /* New Sections Styling */
+        .meta-section { margin-top: 40px; font-size: 0.95em; }
+        .meta-section h3 { border-bottom: 1px solid #ddd; padding-bottom: 5px; color: var(--primary-color); }
+
+        /* Supporting Info Section */
+        #supporting-info { margin-top: 60px; padding-top: 30px; border-top: 5px solid #eee; }
+        .appendix-block { margin-bottom: 50px; }
+        .appendix-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            #toc { display: none; }
+            main { margin-left: 0; padding: 30px; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<nav id="toc">
+    <h3>Contents</h3>
+    <ul>
+        <li><a href="#top">Title &amp; Authors</a></li>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#intro">1. Introduction</a></li>
+        <li><a href="#methods">2. Methods</a>
+             <ul>
+                 <li class="sub"><a href="#study-area">2.1 Study Area</a></li>
+                 <li class="sub"><a href="#sampling">2.2 Sampling Design</a></li>
+                 <li class="sub"><a href="#data-collection">2.3 Vegetation Data Collection</a></li>
+                 <li class="sub"><a href="#env-vars">2.4 Environmental Variables</a></li>
+                 <li class="sub"><a href="#data-prep">2.5 Data Preparation</a></li>
+                 <li class="sub"><a href="#analysis">2.6 Multivariate Community Analyses</a></li>
+                 <li class="sub"><a href="#regen-model">2.7 Regeneration Dynamics and Predictive Modelling</a></li>
+                 <li class="sub"><a href="#software">2.8 Software Environment</a></li>
+                 <li class="sub"><a href="#reproducibility">2.9 Reproducibility and Data Stewardship</a></li>
+             </ul>
+        </li>
+        <li><a href="#results">3. Results</a>
+             <ul>
+                 <li class="sub"><a href="#res-composition">3.1 Community Composition and Ordination</a></li>
+                 <li class="sub"><a href="#res-diffs">3.2 Community Differences Among Forest Types</a></li>
+                 <li class="sub"><a href="#res-env">3.3 Species–Environment Relationships</a></li>
+                 <li class="sub"><a href="#res-div">3.4 Diversity Patterns</a></li>
+                 <li class="sub"><a href="#res-ind">3.5 Indicator Species</a></li>
+                 <li class="sub"><a href="#res-regen">3.6 Regeneration Modelling</a></li>
+             </ul>
+        </li>
+        <li><a href="#discussion">4. Discussion</a>
+             <ul>
+                 <li class="sub"><a href="#disc-stratified">4.1 Stratified Community Turnover</a></li>
+                 <li class="sub"><a href="#disc-drivers">4.2 Environmental Drivers and Scale of Control</a></li>
+                 <li class="sub"><a href="#disc-diversity">4.3 Diversity Patterns and Beta-Diversity</a></li>
+                 <li class="sub"><a href="#disc-indicator">4.4 Indicator Species and Floristic Transitions</a></li>
+                 <li class="sub"><a href="#disc-regen">4.5 Regeneration Dynamics and Model Interpretation</a></li>
+                 <li class="sub"><a href="#disc-limitations">4.6 Limitations and Novelty of the Study</a></li>
+             </ul>
+        </li>
+        <li><a href="#conclusions">5. Conclusions</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#tables-section">Tables</a></li>
+        <li><a href="#figures-section">Figures</a></li>
+        <li><a href="#supporting-info">Supporting Information</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#acknowledgements">Acknowledgements</a></li>
+        <li><a href="#author-contributions">Author Contributions</a></li>
+        <li><a href="#data-availability">Data Availability</a></li>
+        <li><a href="#conflict-of-interest">Conflict of Interest</a></li>
+    </ul>
+</nav>
+
+<main id="top">
+
+    <div class="header-info">
+        <h1>Vegetation Community Composition and Species–Environment Relationships Along an Elevational Gradient in South-Central Bhutan</h1>
+
+        <div class="authors">
+            Wangdi Wangdi<sup>1,*</sup>, Rupesh Subedi<sup>2</sup>, Kezang Choden<sup>3</sup>
+        </div>
+
+        <div class="affiliations">
+            <sup>1</sup> Forest Resources Planning and Management Division, Department of Forests and Park Services, Ministry of Energy and Natural Resources, Royal Government of Bhutan, Thimphu, Bhutan.<br>
+            <sup>2</sup> Royal University of Bhutan, Thimphu District, Bhutan. Associate Lecturer (Forest Science).<br>
+            <sup>3</sup> Royal University of Bhutan, Paro College of Education, Bhutan. Research Officer.
+        </div>
+
+        <div class="affiliations" style="margin-top: 10px;">
+            <strong>ORCID:</strong><br>
+            Wangdi Wangdi: <a href="https://orcid.org/0009-0007-7726-1742" class="orcid-link">https://orcid.org/0009-0007-7726-1742</a><br>
+            Rupesh Subedi: <a href="https://orcid.org/0000-0003-0417-0296" class="orcid-link">https://orcid.org/0000-0003-0417-0296</a><br>
+            Kezang Choden: <a href="https://orcid.org/0009-0004-1245-5931" class="orcid-link">https://orcid.org/0009-0004-1245-5931</a>
+        </div>
+
+        <div class="correspondence">
+            <strong>Correspondence:</strong><br>
+            Wangdi Wangdi, Forest Resources Planning and Management Division, Department of Forests and Park Services, Ministry of Energy and Natural Resources, Royal Government of Bhutan, Thimphu, Bhutan.<br>
+            Email: wangdiues@gmail.com
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="01_manuscript_jvs.pdf" class="pdf-download-btn" download>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download PDF Version
+            </a>
+        </div>
+    </div>
+
+    <section id="abstract" class="abstract-box">
+        <h2>Abstract</h2>
+        <p class="abstract-text"><strong>Questions:</strong> Understanding how plant communities vary along elevation is essential for predicting biodiversity responses to environmental change. We asked how community composition, diversity, and species–environment relationships differ among vegetation strata along an elevational gradient, and which environmental variables best explain regeneration patterns.</p>
+        <p class="abstract-text"><strong>Location:</strong> Sarpang District, south-central Bhutan; unmanaged subtropical to cool broadleaved forests spanning approximately 260 to 1,964 m a.s.l.</p>
+        <p class="abstract-text"><strong>Methods:</strong> We analysed vegetation data from four strata (trees, shrubs, herbs, regeneration) across 220 plots. We constructed community matrices, quantified environmental variables, applied non-metric multidimensional scaling and canonical correspondence analysis, and tested group differences with permutational multivariate analysis of variance. Indicator species analysis and machine-learning models (random forest and gradient boosting) assessed regeneration patterns.</p>
+        <p class="abstract-text"><strong>Results:</strong> Community composition differed among forest types in all strata (R² 0.017 to 0.050; p = 0.001). Environmental predictors explained 3.2 to 3.8 percent of variation in trees and shrubs and were not significant for herbs and regeneration. Trees had the highest Shannon diversity (1.391 ± 0.595), whereas herbs had the lowest (0.325 ± 0.451). For regeneration richness, random forest showed modest cross-validated performance (root mean square error 1.165 ± 0.182; coefficient of determination 0.142 ± 0.040).</p>
+        <p class="abstract-text"><strong>Conclusions:</strong> Forest types impose a statistically detectable but limited macro-environmental signal across strata. Community assembly is dominated by fine-scale heterogeneity and vertical decoupling among layers, and regeneration is only weakly predictable from coarse environmental gradients. These results provide a baseline for monitoring unmanaged broadleaved forests within the sampled 260–1,964 m range.</p>
+
+        <div class="keywords">
+            <strong>Keywords:</strong> elevational gradient, plant community, tropical mountain forest, species–environment relationships, community assembly, diversity, regeneration, ordination, canonical correspondence analysis, indicator species
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section id="intro">
+        <h2>1. Introduction</h2>
+        <p>Elevational gradients constitute powerful natural laboratories for understanding how climate, topography, and habitat heterogeneity interact to structure plant communities. Because temperature, moisture availability, and growing-season length vary predictably with altitude, mountain systems have long served as test beds for ecological theory addressing species richness, environmental filtering, and community turnover (<a href="#Lomolino2001" class="citation">Lomolino, 2001</a>; <a href="#Rahbek2005" class="citation">Rahbek, 2005</a>). Across regions, richness–elevation relationships are frequently unimodal but vary with spatial extent, taxonomic scope, and climatic context, indicating that no single mechanism universally governs elevational diversity patterns (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>; <a href="#McCain2009" class="citation">McCain, 2009</a>).</p>
+
+        <p>In forest ecosystems, steep abiotic gradients combined with fine-scale variation in soils, canopy structure, and disturbance regimes generate pronounced compositional turnover and vertically stratified responses among trees, shrubs, and herb layers (<a href="#Gilliam2007" class="citation">Gilliam, 2007</a>; <a href="#Sundqvist2013" class="citation">Sundqvist et al., 2013</a>). Mountain floras therefore often exhibit high beta diversity over short distances, reflecting both dispersal limitation and niche differentiation along climatic and edaphic gradients (<a href="#Qian2005" class="citation">Qian et al., 2005</a>). Recent research has increasingly focused on disentangling the relative roles of environmental filtering, functional traits, and biotic interactions in shaping elevational community organization (<a href="#Siefert2013" class="citation">Siefert et al., 2013</a>; <a href="#Kraft2015" class="citation">Kraft et al., 2015</a>). Nevertheless, many studies continue to focus primarily on canopy trees, despite mounting evidence that understorey strata respond more sensitively to microclimatic and edaphic variation and may follow distinct compositional trajectories along the same gradient (<a href="#Gilliam2007" class="citation">Gilliam, 2007</a>; <a href="#Lenoir2008" class="citation">Lenoir et al., 2008</a>). Regeneration layers are especially informative in this context because they integrate recent recruitment processes and may foreshadow future changes in forest composition under ongoing climatic warming (<a href="#Clark2014" class="citation">Clark et al., 2014</a>).</p>
+
+        <p>The eastern Himalaya represents a global centre of biodiversity characterized by extreme elevational relief, complex terrain, and monsoonal climates that generate sharp forest transitions and substantial species turnover (<a href="#Myers2000" class="citation">Myers et al., 2000</a>; <a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). Within this region, numerous studies have documented steep elevational zonation and marked diversity patterns, while broad-scale syntheses emphasize the region's sharp biodiversity gradients and habitat heterogeneity (<a href="#Myers2000" class="citation">Myers et al., 2000</a>; <a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). Despite this growing body of work, community-level investigations integrating multiple vegetation strata across Himalayan elevational gradients remain comparatively uncommon. Few studies explicitly compare species–environment relationships among canopy and understorey layers, and regeneration dynamics are seldom analysed in parallel with diversity and compositional patterns, despite their central importance for forest resilience and long-term reorganization (<a href="#Sundqvist2013" class="citation">Sundqvist et al., 2013</a>; <a href="#Clark2014" class="citation">Clark et al., 2014</a>).</p>
+
+        <p>Here, we present a multi-stratum assessment of plant community composition, diversity, and species–environment relationships along an elevational gradient in south-central Bhutan. We test whether forest types differ in composition across four strata—trees, shrubs, herbs, and regeneration—identify macro-environmental correlates of community structure, and quantify elevational trends in alpha and beta diversity together with indicator species. We also use machine-learning models as exploratory tools to evaluate which measured variables are associated with regeneration richness. By integrating multiple vegetation strata within a unified framework, this study provides one of few multi-stratum assessments in the eastern Himalaya and explicitly evaluates scale mismatch between macro predictors and microsite processes.</p>
+    </section>
+
+    <!-- METHODS -->
+    <section id="methods">
+        <h2>2. Methods</h2>
+
+        <h3 id="study-area">2.1 Study area</h3>
+        <p>The study was conducted in unmanaged forests of Sarpang District in south-central Bhutan under the jurisdiction of Divisional Forest Office, Sarpang. The region spans a pronounced elevational gradient from approximately 153 to 3,500 m a.s.l., encompassing subtropical broadleaved forests at lower elevations (100–500 m), warm broadleaved forests at mid-elevations (500–1,500 m), and cool broadleaved forests between 1,500 and 3,000 m. Such steep altitudinal transitions typify Himalayan landscapes and generate strong climatic and edaphic gradients over short distances (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>; <a href="#Korner2007" class="citation">Körner, 2007</a>) (Figure 1).</p>
+
+        <p>This broader regional range provides ecological context; all statistical inference in this study is based on sampled plots spanning approximately 260 to 1,964 m a.s.l.</p>
+
+        <p>Annual precipitation is high and strongly seasonal, reflecting monsoon circulation intensified by orographic uplift, a defining feature of the eastern Himalayan foothills (<a href="#Bookhagen2010" class="citation">Bookhagen &amp; Burbank, 2010</a>). Rugged terrain and variable slope exposure create pronounced microclimatic heterogeneity, which is expected to contribute to high beta diversity and fine-scale community turnover along the gradient (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). The landscape also forms part of a strategic ecological linkage among Bhutan's protected areas, although the sampled forests themselves lie largely outside formal management regimes.</p>
+
+        <h3 id="sampling">2.2 Sampling design</h3>
+        <p>Vegetation sampling followed a stratified random design along the elevational gradient extending from Shershong (approximately 260 m a.s.l.) in the south to Singye (approximately 1,964 m a.s.l.) in the north. A total of 220 plots were established across forest types to ensure representation of major vegetation zones and environmental conditions.</p>
+
+        <p>Each plot measured 20 × 20 m (400 m²), a size widely used in forest community studies to characterise tree assemblages and stand structure, with a nested 2 × 2 m subplot used to survey herbaceous vegetation. Fieldwork was undertaken between March and November to encompass seasonal variability in understorey communities while avoiding periods of peak monsoon inaccessibility. Plots were distributed approximately evenly among elevational bands and forest types to ensure balanced representation of vegetation zones. Within each band, plot locations were stratified by forest type and positioned using random bearings and distances from access transects, subject to terrain safety and forest accessibility constraints.</p>
+
+        <h3 id="data-collection">2.3 Vegetation data collection</h3>
+        <p>All free-standing woody individuals with diameters at breast height (DBH) &gt; 10 cm and height &gt; 1.3 m were recorded as trees. DBH was measured using diameter tapes, and total height was estimated by using hypsometers. Shrubs were assessed for presence, height, and lateral spread, while herbaceous species were quantified within subplots using percentage cover, frequency, and maximum height.</p>
+
+        <p>Regeneration comprised all woody individuals below the canopy layer that had not yet reached the tree stratum. Seedlings were defined as individuals ≤ 1.3 m in height, irrespective of stem diameter, whereas saplings were defined as individuals &gt; 1.3 m in height with DBH ≤ 10 cm. Species exceeding 10 cm DBH were assigned to the tree layer. Regeneration richness therefore integrated both seedling and sapling cohorts, representing early demographic stages that are particularly sensitive to microsite conditions and neighborhood effects.</p>
+
+        <p>Species identifications were verified using regional floras and herbarium reference material, and taxonomic nomenclature was cross-checked against the World Flora Online database (accessed 6 Feb 2026). Structural attributes, including basal area, DBH-class distributions, and height-class distributions, were derived to characterize stand structure and regeneration dynamics across forest types and elevational gradients.</p>
+
+        <h3 id="env-vars">2.4 Environmental variables</h3>
+        <p>Topographic attributes (latitude and longitude), including elevation, slope, and aspect, were recorded in the field using handheld Global Positioning System receivers, clinometers, and compasses. Spatial climatic surfaces describing air temperature, precipitation, evapotranspiration, and water balance were extracted from the national gridded climate dataset produced by <a href="#Dorji2025" class="citation">Dorji et al. (2025)</a>, developed by CSIRO and distributed with a permanent digital object identifier (<a href="https://doi.org/10.25919/pec2-hs50">https://doi.org/10.25919/pec2-hs50</a>).</p>
+
+        <p>Environmental values were extracted at plot coordinates using the dataset's native grid and historical baseline layers (1986–2015), consistent with the metadata provided for the archived climate product. These climate layers were used consistently across all spatial and statistical analyses.</p>
+
+        <h3 id="data-prep">2.5 Data preparation</h3>
+        <p>Field records were curated in tabular format to compute species abundance, frequency, basal area and importance value index separately for each vegetation stratum. Alpha diversity was quantified using the Shannon–Wiener index (H'), Simpson's diversity index (1 - D) and Pielou's evenness (J) for each forest type and vegetation layer (<a href="#Shannon1948" class="citation">Shannon, 1948</a>; <a href="#Simpson1949" class="citation">Simpson, 1949</a>; <a href="#Pielou1966" class="citation">Pielou, 1966</a>).</p>
+
+        <h3 id="analysis">2.6 Multivariate community analyses</h3>
+        <p>Floristic variation among plots was examined using non-metric multidimensional scaling (NMDS) based on Bray–Curtis dissimilarities (<a href="#BrayCurtis1957" class="citation">Bray &amp; Curtis, 1957</a>; <a href="#Kruskal1964" class="citation">Kruskal, 1964</a>). Species–environment relationships were assessed using canonical correspondence analysis (CCA), which constrains ordination axes by linear combinations of climatic and topographic predictors (<a href="#terBraak1986" class="citation">ter Braak, 1986</a>). Ordination axes were interpreted through correlations between site scores and environmental variables.</p>
+
+        <p>Community differences among forest types were tested using permutational multivariate analysis of variance (<a href="#Anderson2001" class="citation">Anderson, 2001</a>). NMDS was computed with two dimensions (k = 2) and a fixed random seed (42) to ensure reproducibility. Environmental vectors were fitted using permutation tests with 999 randomizations. PERMANOVA was conducted with 999 permutations, and homogeneity of multivariate dispersions was evaluated using permutation tests on distance-to-centroid values (<a href="#Warton2012" class="citation">Warton et al., 2012</a>).</p>
+
+        <p>To support valid interpretation, PERMANOVA results were interpreted jointly with effect sizes (R²) and dispersion tests. In strata with heterogeneous dispersion, PERMANOVA was interpreted as reflecting combined centroid and spread effects rather than pure location shifts (<a href="#Warton2012" class="citation">Warton et al., 2012</a>). NMDS was used for pattern visualization rather than as a stand-alone test of group separation.</p>
+
+        <p>Prior to CCA, collinearity among predictors was assessed using variance inflation factors, and variables exceeding a threshold of 10 were sequentially removed following deterministic selection rules. Statistical significance of constrained axes and individual predictors was evaluated using 999 permutations.</p>
+
+        <p>Indicator species analysis was applied to identify taxa significantly associated with forest types using the indicator value method, with significance assessed at α = 0.05 and 999 permutations (<a href="#DufreneLegendre1997" class="citation">Dufrêne &amp; Legendre, 1997</a>).</p>
+
+        <h3 id="regen-model">2.7 Regeneration dynamics and predictive modelling</h3>
+        <p>Seedling and sapling data were analysed to quantify regeneration patterns and spatial structure across forest types and elevations. Environmental drivers of regeneration richness were modelled using random forest and extreme gradient boosting algorithms, both of which are widely applied for non-linear ecological prediction problems (<a href="#Breiman2001" class="citation">Breiman, 2001</a>; <a href="#ChenGuestrin2016" class="citation">Chen &amp; Guestrin, 2016</a>). Random forest models were fitted with 500 trees, and predictor importance was quantified as the percentage increase in mean squared error following permutation. Gradient boosting models were parameterized with 100 boosting rounds, a maximum tree depth of four and a learning rate of 0.1, and predictor influence was assessed using relative gain values.</p>
+
+        <p>Model performance was evaluated using five-fold cross-validation with a fixed random seed (42) to ensure reproducibility. Predictive accuracy was summarized using cross-validated error statistics and explained variance, and response curves were inspected to verify ecologically plausible relationships between regeneration patterns and key climatic or topographic predictors.</p>
+
+        <p>Because predictive performance was modest, variable-importance results were interpreted as exploratory indicators of potential drivers rather than definitive causal rankings.</p>
+
+        <h3 id="software">2.8 Software environment</h3>
+        <p>All analyses were conducted in R. Community-ecology workflows, including ordination, dissimilarity-based testing and indicator-species analysis, were implemented primarily using functions described in the ecological literature underlying widely adopted multivariate methods (<a href="#terBraak1986" class="citation">ter Braak, 1986</a>; <a href="#Anderson2001" class="citation">Anderson, 2001</a>; <a href="#DufreneLegendre1997" class="citation">Dufrêne &amp; Legendre, 1997</a>). Results from selected multivariate classifications and indicator-species procedures were independently verified in PC-ORD version 5 to confirm analytical consistency. Microsoft Excel was used for preliminary data curation and quality-control screening prior to statistical analysis.</p>
+
+        <h3 id="reproducibility">2.9 Reproducibility and data stewardship</h3>
+        <p>Reproducibility was ensured through systematic archiving of raw field observations, spatial environmental layers, curated analysis tables and derived outputs. All distance measures, ordination settings, permutation schemes and machine-learning hyperparameters were documented in metadata files accompanying the archived datasets. Intermediate products, including ordination scores, regeneration prediction surfaces, cross-validation partitions and variable-importance tables were retained to permit independent replication of all analytical steps.</p>
+
+        <p>Upon submission, data and code supporting the results will be deposited in a public repository with a digital object identifier in accordance with data-sharing policy, with anonymized access provided during double-blind peer review.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results">
+        <h2>3. Results</h2>
+
+        <h3 id="res-composition">3.1 Community composition and ordination</h3>
+        <p>Non-metric multidimensional scaling (NMDS) showed modest but detectable compositional differentiation among forest types across strata (Figure 2). Stress values were uniformly low (trees = 0.0001; shrubs = 0.070; herbs = 0.001; regeneration = 0.0006), indicating a low-stress two-dimensional rank-order fit of Bray–Curtis dissimilarities rather than a perfect ordination (Appendix S3). We explored multiple dimensional solutions, and stress values remained consistently low, confirming ordination stability.</p>
+
+        <p>The near-zero stress values for trees, herbs, and regeneration likely arise from matrix properties that ease low-dimensional rank fitting (for example, high tied dissimilarities and sparse compositional structure), so ordinations were interpreted conservatively as broad summaries rather than precise geometric distances (<a href="#Kruskal1964" class="citation">Kruskal, 1964</a>; <a href="#Clarke1993" class="citation">Clarke, 1993</a>). We therefore cross-checked NMDS patterns against PERMANOVA, dispersion tests, and constrained ordination instead of relying on visual separation alone.</p>
+
+        <p>Shrub and herb assemblages displayed the greatest dispersion in ordination space and the strongest alignment with fitted climatic vectors, particularly temperature, evapotranspiration and precipitation (Figure 2B–C). Tree assemblages were comparatively compressed along NMDS axes (Figure 2A), while regeneration plots showed broad scatter (Figure 2D), together indicating vertical decoupling and strong neighbourhood-scale heterogeneity.</p>
+
+        <p>These stratified responses mirror documented altitudinal forest-type transitions along Bhutanese dry valley slopes (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>).</p>
+
+        <h3 id="res-diffs">3.2 Community differences among forest types</h3>
+        <p>Community composition differed significantly among forest types across all vegetation strata (Table 1). Tree assemblages exhibited modest but statistically significant separation (PERMANOVA R² = 0.031, F = 3.38, p = 0.001), with homogeneous dispersions (betadisper p = 0.291), indicating that group differences reflected centroid shifts rather than unequal within-group variability (Appendix S2).</p>
+
+        <p>Shrub communities showed the strongest differentiation among forest types (R² = 0.050, F = 5.05, p = 0.001), although dispersions were heterogeneous (p = 0.001), suggesting that both location and spread contributed to observed differences. Herb and regeneration assemblages also differed significantly (R² = 0.017 and 0.021, respectively; both p = 0.001), but only the herb stratum showed heterogeneous dispersion (Table 1).</p>
+
+        <p>The greater sensitivity of shrub and herb layers relative to trees is consistent with reported altitudinal zonation and vegetation transitions in Himalayan forests (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>; <a href="#GriersonLong" class="citation">Grierson &amp; Long, 1983–2001</a>). In strata with heterogeneous dispersion, PERMANOVA reflects combined centroid and spread effects. Accordingly, shrub and herb results were interpreted as mixed location–dispersion signals, whereas homogeneous dispersions for trees and regeneration indicate that their compositional differences more closely represent centroid shifts.</p>
+
+        <h3 id="res-env">3.3 Species–environment relationships</h3>
+        <p>Canonical correspondence analysis revealed that selected environmental variables—aspect, evapotranspiration, latitude, longitude and slope—explained a small but statistically significant fraction of constrained inertia in trees and shrubs. The percentage of total inertia explained was 3.2% for trees (p = 0.008) and 3.8% for shrubs (p = 0.001; Table 2; Figure 3). For herbs and regeneration, constrained models explained 3.4% of total inertia but were not significant at α = 0.05 (p = 0.125 and 0.076, respectively) (Appendix S9).</p>
+
+        <p>CCA biplots illustrated contrasting environmental associations among strata (Figure 3). Tree communities aligned primarily with slope and aspect gradients, shrub assemblages were most strongly oriented toward evapotranspiration and latitudinal position, while herbaceous vegetation responded to combined slope–climate axes. Regeneration patterns were weakly associated with evapotranspiration and aspect.</p>
+
+        <p>The low proportion of constrained inertia across all strata is expected in steep, heterogeneous Himalayan terrain and is consistent with substantial unmeasured microsite drivers operating within broader altitudinal transitions (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>; <a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>).</p>
+
+        <h3 id="res-div">3.4 Diversity patterns</h3>
+        <p>Alpha diversity differed markedly among vegetation strata (Table 3; Figure 4). Trees exhibited the highest mean species richness (5.30 ± 2.57 species per plot) and Shannon diversity (1.391 ± 0.595), followed by shrubs (richness = 4.77 ± 3.43; Shannon = 1.063 ± 0.706), regeneration (richness = 2.00 ± 1.26; Shannon = 0.443 ± 0.499) and herbs (richness = 1.79 ± 1.32; Shannon = 0.325 ± 0.451). Pielou's evenness was highest for trees (0.903) and lowest for herbs (0.804).</p>
+
+        <p>Species accumulation curves approached asymptotes most rapidly for shrubs and regeneration, whereas trees and herbs continued to increase steadily with sampling effort, indicating incomplete saturation of the regional species pool in these strata (Figure 5). Such patterns are consistent with documented altitudinal zonation of Bhutanese dry-valley forests and reported regeneration dynamics of dominant trees (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>; <a href="#WangdaOhsawa2006b" class="citation">Wangda &amp; Ohsawa, 2006b</a>). Continued species accumulation in tree and herb strata suggests that additional sampling would likely yield further taxa, particularly rare canopy species and ephemeral understorey herbs, indicating substantial compositional turnover.</p>
+
+        <p>Species richness varied along the elevational gradient for all strata (Figure 6). Shrubs displayed a unimodal mid-elevation peak, whereas trees showed comparatively stable richness across the sampled range, and herbs and regeneration exhibited weaker, irregular trends. These responses align with Himalayan studies reporting mid-elevation richness peaks and altitudinal zonation in woody layers (<a href="#Acharya2011" class="citation">Acharya et al., 2011</a>; <a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>; <a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>).</p>
+
+        <p>Beta diversity (Whittaker's β) was highest for herbs (75.04), followed by regeneration (54.63), trees (41.86) and shrubs (23.89), indicating pronounced species turnover in the herb layer relative to the regional species pool.</p>
+
+        <h3 id="res-ind">3.5 Indicator species</h3>
+        <p>Indicator-species analysis detected significant associations with elevational classes across all strata (Table 4). Shrubs contained the largest proportion of indicator taxa (15 of 101 species; 14.9%), followed by herbs (10 of 134; 7.5%), regeneration (8 of 109; 7.3%) and trees (10 of 221; 4.5%) (Appendix S4).</p>
+
+        <p>Among canopy trees, <i>Schima wallichii</i> and <i>Castanopsis indica</i> were characteristic of low- to mid-elevation forests, whereas <i>Alnus nepalensis</i> was associated with higher elevations. These patterns accord with floristic zonation documented in Bhutanese mountain forests, where evergreen broadleaved species dominate lower belts and pioneer or cool-adapted taxa become more frequent upslope (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>; <a href="#GriersonLong" class="citation">Grierson &amp; Long, 1983–2001</a>).</p>
+
+        <h3 id="res-regen">3.6 Regeneration modelling</h3>
+        <p>Random forest produced modest predictive performance for regeneration richness (Table 5; Figure 7), with cross-validated R² = 0.142 ± 0.040 and RMSE 1.165 ± 0.182. Gradient boosting showed near-zero to negative explanatory power (R² = -0.009 ± 0.096; RMSE = 1.261 ± 0.192) (Appendix S5).</p>
+
+        <p>Fold-level diagnostics (Appendix S7) showed moderate variability in RF performance (R² range: 0.096–0.193; RMSE range: 0.999–1.476) and unstable XGBoost performance (R² range: -0.154 to 0.106; RMSE range: 1.102–1.570), reinforcing that coarse predictors provide only weak predictability of recruitment.</p>
+
+        <p>Variable-importance rankings indicated that shrub-layer attributes, together with temperature, elevation and evapotranspiration, were the strongest correlates of regeneration richness (Figure 7; Appendix S6). Ecologically, this pattern is consistent with neighbourhood-scale filtering and local biotic interactions outweighing coarse macro-environmental gradients for early life stages (<a href="#WangdaOhsawa2006b" class="citation">Wangda &amp; Ohsawa, 2006b</a>).</p>
+
+        <p>Given the low explanatory power, these models are interpreted as exploratory ecological inference rather than deterministic prediction. Important drivers—such as canopy openness, disturbance history, soil properties or fine-scale moisture regimes—were not fully captured by the available predictors, a common limitation in forest-regeneration modelling in complex mountain terrain (<a href="#Elith2008" class="citation">Elith et al., 2008</a>).</p>
+    </section>
+
+    <!-- DISCUSSION -->
+    <section id="discussion">
+        <h2>4. Discussion</h2>
+
+        <h3 id="disc-stratified">4.1 Stratified community turnover along elevational gradients</h3>
+        <p>Our analyses indicate clear vertical stratification in community turnover, with understorey assemblages (shrubs and herbs) more variable than canopy trees. This pattern mirrors observations from other Himalayan forests where understorey communities respond strongly to microclimatic and edaphic heterogeneity, whereas long-lived canopy trees integrate conditions over broader temporal and spatial scales (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>; <a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). Forest-type effects were statistically detectable but limited in magnitude: PERMANOVA explained only 1.7–5.0% of compositional variation (R² = 0.017–0.050, p = 0.001). These low effect sizes are compatible with high beta diversity and fine-grained heterogeneity in montane systems (<a href="#Acharya2011" class="citation">Acharya et al., 2011</a>; <a href="#Carpenter2005" class="citation">Carpenter, 2005</a>). Importantly, interpretation depends on dispersion structure: in shrub and herb strata, heterogeneous dispersions indicate mixed location–spread effects, whereas tree and regeneration strata with homogeneous dispersions indicate clearer centroid shifts among forest types. This cross-stratum contrast supports vertical decoupling, where canopy differentiation is detectable but modest and understorey turnover is dominated by neighbourhood-scale heterogeneity.</p>
+
+        <h3 id="disc-drivers">4.2 Environmental drivers and scale of control</h3>
+        <p>Direct gradient analyses (CCA) showed that aspect, slope, evapotranspiration, and spatial position explained only a small fraction of floristic variation (≈3–4% in trees and shrubs). Rather than indicating weak study design, this low constrained inertia is expected in steep Himalayan terrain, where microtopography, canopy gaps, soils, and disturbance history vary at much finer scales than gridded macro predictors (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>; <a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>). The contrasting orientations among strata reinforce this scale mismatch. Tree communities aligned mainly with slope and aspect, while shrubs and regeneration were more associated with evapotranspiration and latitude; herbs tracked mixed slope–climate axes. Together, these patterns indicate that macro-environmental gradients are detectable but limited, and that community assembly is dominated by microsite processes and vertical decoupling among strata.</p>
+
+        <h3 id="disc-diversity">4.3 Diversity patterns and beta-diversity</h3>
+        <p>Marked differences in alpha diversity among strata further highlight the vertically structured nature of Himalayan broadleaved forests. Tree layers in our study maintained high species richness and evenness across the gradient, reflecting the coexistence of multiple canopy dominants in these unmanaged stands—a feature repeatedly documented in Bhutan's warm and cool broadleaved forests (<a href="#GriersonLong" class="citation">Grierson &amp; Long, 1983–2001</a>; <a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>). Shrub richness peaked at mid-elevations, consistent with many Himalayan studies that find unimodal diversity curves in the woody understorey around intermediate altitudes where moisture, temperature, and structural complexity are jointly optimized (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). By contrast, herbs and regeneration showed weak or irregular elevational trends in richness, coupled with elevated beta diversity relative to alpha diversity in the herb layer. This pattern implies that small-scale environmental mosaics, rather than smooth elevational forcing, structure ground-layer communities. High herb-layer beta diversity is widely reported in Himalayan forests and alpine systems, where aspect, litter depth, and gap dynamics generate sharp species turnover over short distances (<a href="#GrytnesVetaas2002" class="citation">Grytnes &amp; Vetaas, 2002</a>). The fact that our species accumulation curves did not fully asymptote for trees and herbs even after 221 plots suggests that a considerable portion of the regional species pool remained unsampled in these strata, consistent with substantial compositional turnover.</p>
+
+        <h3 id="disc-indicator">4.4 Indicator species and floristic transitions</h3>
+        <p>Indicator species analysis revealed fewer significant canopy indicators than shrub and herb indicators, supporting vertical decoupling in habitat filtering strength. Low tree indicator specificity is consistent with broader niche amplitudes in canopy taxa across the sampled gradient. In contrast, stronger shrub and herb differentiation implies finer-scale filtering in understorey microsites. This contrast aligns with Himalayan zonation as overlapping distributions rather than discrete boundaries (<a href="#Ohsawa1995" class="citation">Ohsawa, 1995</a>; <a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>).</p>
+
+        <h3 id="disc-regen">4.5 Regeneration dynamics and model interpretation</h3>
+        <p>Machine-learning results were used as exploratory ecological evidence on regeneration controls. The best model (random forest) explained only about 14% of cross-validated variance (R² ≈ 0.14), indicating weak predictability from the available coarse predictors. Shrub-layer structure emerged as the strongest correlate, supporting neighbourhood-scale filtering during early recruitment. This interpretation is consistent with Bhutanese forest observations that local stand structure influences regeneration (<a href="#WangdaOhsawa2006a" class="citation">Wangda &amp; Ohsawa, 2006a</a>; <a href="#WangdaOhsawa2006b" class="citation">Wangda &amp; Ohsawa, 2006b</a>). The low predictive power also indicates missing microsite drivers, such as canopy openness, soil properties, disturbance history, and fine-scale moisture (<a href="#Elith2008" class="citation">Elith et al., 2008</a>). Accordingly, these models should not be read as deterministic forecasts, but as evidence that regeneration is only weakly predictable from macro-environmental gradients in this landscape.</p>
+
+        <h3 id="disc-limitations">4.6 Limitations and novelty of the study</h3>
+        <p>Several caveats merit consideration. First, climate variables were derived from interpolated surfaces (<a href="#Dorji2025" class="citation">Dorji et al., 2025</a>) and may not capture plot-level microclimate in steep terrain. Second, heterogeneous dispersion in shrub and herb strata means that part of PERMANOVA significance reflects spread differences, not only centroid shifts. Third, regeneration measurements represent a temporal snapshot and may miss episodic establishment dynamics of slow-growing montane trees. Spatial autocorrelation was not explicitly modeled, which may influence fine-scale inference, and future work could apply spatially explicit approaches. Even with these constraints, this study provides one of few multi-stratum assessments in the eastern Himalaya. The main contribution is to show that broad-scale environmental effects are statistically detectable but limited, while fine-scale heterogeneity, neighbourhood filtering, and vertical decoupling dominate assembly patterns.</p>
+    </section>
+
+    <!-- CONCLUSIONS -->
+    <section id="conclusions">
+        <h2>5. Conclusions</h2>
+        <p>Across 260–1,964 m a.s.l. in south-central Bhutan, forest types imposed a statistically detectable but limited macro-environmental signal on community composition (R² = 0.017–0.050). Understorey strata showed greater turnover and higher dispersion than canopy trees, indicating strong vertical stratification and decoupling among layers.</p>
+
+        <p>CCA explained only about 3–4% of variation, which is consistent with steep Himalayan terrain where microsite heterogeneity is high and many local drivers are unmeasured. PERMANOVA interpretation was therefore conditioned on dispersion structure, with mixed centroid–spread effects in heterogeneous strata.</p>
+
+        <p>Regeneration was only weakly predictable from coarse predictors (random forest CV R² ≈ 0.14), and shrub-layer attributes emerged as the strongest correlates. This supports neighbourhood-scale filtering during early recruitment and reinforces that macro gradients alone do not capture regeneration dynamics.</p>
+
+        <p>This study provides a baseline for long-term monitoring of unmanaged broadleaved forests in the sampled elevation range. Inference should remain restricted to this 260–1,964 m gradient.</p>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="references">
+        <h2>References</h2>
+        <div class="references">
+
+<div id="Acharya2011">Acharya, B. K., Chettri, B., and Vijayan, L. (2011). Distribution pattern of trees along an elevational gradient of Eastern Himalaya, India. <i>Acta Oecologica</i> 37, 329–336.</div>
+
+<div id="Anderson2001">Anderson, M. J. (2001). A new method for non-parametric multivariate analysis of variance. <i>Austral Ecology</i> 26, 32–46.</div>
+
+<div id="Bookhagen2010">Bookhagen, B. and Burbank, D. W. (2010). Toward a complete Himalayan hydrological budget: Spatiotemporal distribution of snowmelt and rainfall and their impact on river discharge. <i>Journal of Geophysical Research: Earth Surface</i> 115, F03019.</div>
+
+<div id="BrayCurtis1957">Bray, J. R. and Curtis, J. T. (1957). An ordination of the upland forest communities of southern Wisconsin. <i>Ecological Monographs</i> 27, 325–349.</div>
+
+<div id="Breiman2001">Breiman, L. (2001). Random forests. <i>Machine Learning</i> 45, 5–32.</div>
+
+<div id="Carpenter2005">Carpenter, C. (2005). The environmental control of plant species density on a Himalayan elevation gradient. <i>Journal of Biogeography</i> 32, 999–1018.</div>
+
+<div id="ChenGuestrin2016">Chen, T. and Guestrin, C. (2016). XGBoost: A scalable tree boosting system. In <i>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</i>, pp. 785–794.</div>
+
+<div id="Clark2014">Clark, J. S., Bell, D., Chu, C., Courbaud, B., Dietze, M., Hersh, M., et al. (2014). High-dimensional coexistence based on individual variation: A synthesis of evidence. <i>Ecological Monographs</i> 84, 3–42.</div>
+
+<div id="Clarke1993">Clarke, K. R. (1993). Non-parametric multivariate analyses of changes in community structure. <i>Australian Journal of Ecology</i> 18, 117–143.</div>
+
+<div id="Dorji2025">Dorji, T. et al. (2025). Bhutan high-resolution climate surfaces (historical 1986–2015 and future 2015–2100). CSIRO Data Collection.</div>
+
+<div id="DufreneLegendre1997">Dufrêne, M. and Legendre, P. (1997). Species assemblages and indicator species: The need for a flexible asymmetrical approach. <i>Ecological Monographs</i> 67, 345–366.</div>
+
+<div id="Elith2008">Elith, J., Leathwick, J. R., and Hastie, T. (2008). A working guide to boosted regression trees. <i>Journal of Animal Ecology</i> 77, 802–813.</div>
+
+<div id="Gilliam2007">Gilliam, F. S. (2007). The ecological significance of the herbaceous layer in temperate forest ecosystems. <i>BioScience</i> 57, 845–858.</div>
+
+<div id="GriersonLong">Grierson, A. J. C. and Long, D. G. (1983–2001). <i>Flora of Bhutan</i>. Edinburgh, UK: Royal Botanical Garden Edinburgh and Royal Government of Bhutan.</div>
+
+<div id="GrytnesVetaas2002">Grytnes, J.-A. and Vetaas, O. R. (2002). Species richness and altitude: A comparison between null models and interpolated plant species richness along the Himalayan altitudinal gradient, Nepal. <i>The American Naturalist</i> 159, 294–304.</div>
+
+<div id="Korner2007">Körner, C. (2007). The use of 'altitude' in ecological research. <i>Trends in Ecology and Evolution</i> 22, 569–574.</div>
+
+<div id="Kraft2015">Kraft, N. J. B., Godoy, O., and Levine, J. M. (2015). Plant functional traits and the multidimensional nature of species coexistence. <i>Proceedings of the National Academy of Sciences of the United States of America</i> 112, 797–802.</div>
+
+<div id="Kruskal1964">Kruskal, J. B. (1964). Nonmetric multidimensional scaling: A numerical method. <i>Psychometrika</i> 29, 115–129.</div>
+
+<div id="Lenoir2008">Lenoir, J., Gégout, J.-C., Marquet, P. A., de Ruffray, P., and Brisse, H. (2008). A significant upward shift in plant species optimum elevation during the twentieth century. <i>Science</i> 320, 1768–1771.</div>
+
+<div id="Lomolino2001">Lomolino, M. V. (2001). Elevation gradients of species density: Historical and prospective views. <i>Global Ecology and Biogeography</i> 10, 3–13.</div>
+
+<div id="McCain2009">McCain, C. M. (2009). Global analysis of bird elevational diversity. <i>Global Ecology and Biogeography</i> 18, 346–360.</div>
+
+<div id="Myers2000">Myers, N., Mittermeier, R. A., Mittermeier, C. G., da Fonseca, G. A. B., and Kent, J. (2000). Biodiversity hotspots for conservation priorities. <i>Nature</i> 403, 853–858.</div>
+
+<div id="Ohsawa1995">Ohsawa, M. (1995). Latitudinal pattern of mountain vegetation zonation in eastern Asia and its relation to climate. <i>Vegetatio</i> 121, 3–10.</div>
+
+<div id="Pielou1966">Pielou, E. C. (1966). The measurement of diversity in different types of biological collections. <i>Journal of Theoretical Biology</i> 13, 131–144.</div>
+
+<div id="Qian2005">Qian, H., Ricklefs, R. E., and White, P. S. (2005). Beta diversity of angiosperms in temperate floras of eastern Asia and eastern North America. <i>Ecology Letters</i> 8, 15–22.</div>
+
+<div id="Rahbek2005">Rahbek, C. (2005). The role of spatial scale and the perception of large-scale species-richness patterns. <i>Ecology Letters</i> 8, 224–239.</div>
+
+<div id="Shannon1948">Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i> 27, 379–423.</div>
+
+<div id="Siefert2013">Siefert, A., Ravenscroft, C., Weiser, M. D., and Cleland, E. E. (2013). Functional beta-diversity patterns reveal deterministic community assembly processes in eastern North American trees. <i>Global Ecology and Biogeography</i> 22, 682–691.</div>
+
+<div id="Simpson1949">Simpson, E. H. (1949). Measurement of diversity. <i>Nature</i> 163, 688.</div>
+
+<div id="Sundqvist2013">Sundqvist, M. K., Sanders, N. J., and Wardle, D. A. (2013). Community and ecosystem responses to elevational gradients. <i>Annual Review of Ecology, Evolution, and Systematics</i> 44, 261–280.</div>
+
+<div id="terBraak1986">ter Braak, C. J. F. (1986). Canonical correspondence analysis: A new eigenvector technique for multivariate direct gradient analysis. <i>Ecology</i> 67, 1167–1179.</div>
+
+<div id="WangdaOhsawa2006a">Wangda, P. and Ohsawa, M. (2006a). Gradational forest change along the climatically dry valley slopes of Bhutan in the midst of humid eastern Himalaya. <i>Plant Ecology</i> 186, 109–128.</div>
+
+<div id="WangdaOhsawa2006b">Wangda, P. and Ohsawa, M. (2006b). Structure and regeneration dynamics of dominant tree species along an altitudinal gradient in dry valley slopes of the Bhutan Himalaya. <i>Forest Ecology and Management</i> 230, 136–150.</div>
+
+<div id="Warton2012">Warton, D. I., Wright, T. W., and Wang, Y. (2012). Distance-based multivariate analyses confound location and dispersion effects. <i>Methods in Ecology and Evolution</i> 3, 89–101.</div>
+
+        </div>
+    </section>
+
+    <!-- TABLES SECTION -->
+    <section id="tables-section">
+        <h2>Tables</h2>
+
+        <div class="table-wrapper" id="table1">
+            <table>
+                <caption><b>Table 1:</b> Results of permutational multivariate analysis of variance (PERMANOVA) and tests of multivariate dispersion for vegetation strata across forest types. <i>p</i>-values are based on 999 permutations.</caption>
+                <thead>
+                    <tr><th>Stratum</th><th>Sites</th><th>Groups</th><th>R²</th><th><i>F</i></th><th><i>p</i></th><th>Disp. <i>F</i></th><th>Disp. <i>p</i></th><th>Homogeneous</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Trees</td><td>216</td><td>3</td><td>0.031</td><td>3.38</td><td>0.001</td><td>1.24</td><td>0.291</td><td>Yes</td></tr>
+                    <tr><td>Shrubs</td><td>194</td><td>3</td><td>0.050</td><td>5.05</td><td>0.001</td><td>12.93</td><td>0.001</td><td>No</td></tr>
+                    <tr><td>Herbs</td><td>206</td><td>3</td><td>0.017</td><td>1.70</td><td>0.001</td><td>15.05</td><td>0.001</td><td>No</td></tr>
+                    <tr><td>Regeneration</td><td>205</td><td>3</td><td>0.021</td><td>2.14</td><td>0.001</td><td>1.17</td><td>0.319</td><td>Yes</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper" id="table2">
+            <table>
+                <caption><b>Table 2:</b> Summary of canonical correspondence analyses by vegetation stratum. Environmental variables were selected following iterative variance inflation factor screening (threshold = 10). Significance of constrained inertia was assessed using 999 permutations.</caption>
+                <thead>
+                    <tr><th>Stratum</th><th>Sites</th><th>Species</th><th>Env. vars</th><th>Total inertia</th><th>Constrained</th><th>% Explained</th><th><i>p</i></th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Trees</td><td>216</td><td>221</td><td>5</td><td>35.117</td><td>1.109</td><td>3.2</td><td>0.008</td></tr>
+                    <tr><td>Shrubs</td><td>194</td><td>101</td><td>5</td><td>27.832</td><td>1.045</td><td>3.8</td><td>0.001</td></tr>
+                    <tr><td>Herbs</td><td>206</td><td>134</td><td>5</td><td>68.475</td><td>2.309</td><td>3.4</td><td>0.125</td></tr>
+                    <tr><td>Regeneration</td><td>205</td><td>109</td><td>5</td><td>58.906</td><td>1.987</td><td>3.4</td><td>0.076</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper" id="table3">
+            <table>
+                <caption><b>Table 3:</b> Mean alpha-diversity metrics by vegetation stratum. Values are mean ± standard deviation.</caption>
+                <thead>
+                    <tr><th>Stratum</th><th>Plots</th><th>Richness</th><th>Shannon</th><th>Simpson</th><th>Evenness</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Trees</td><td>221</td><td>5.30 ± 2.57</td><td>1.391 ± 0.595</td><td>0.665</td><td>0.903</td></tr>
+                    <tr><td>Shrubs</td><td>198</td><td>4.77 ± 3.43</td><td>1.063 ± 0.706</td><td>0.524</td><td>0.832</td></tr>
+                    <tr><td>Regeneration</td><td>209</td><td>2.00 ± 1.26</td><td>0.443 ± 0.499</td><td>0.264</td><td>0.839</td></tr>
+                    <tr><td>Herbs</td><td>210</td><td>1.79 ± 1.32</td><td>0.325 ± 0.451</td><td>0.193</td><td>0.804</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper" id="table4">
+            <table>
+                <caption><b>Table 4:</b> Summary of indicator-species analysis by stratum. Groups were defined by elevational class (low, mid and high). Significance was assessed using 999 permutations at α = 0.05.</caption>
+                <thead>
+                    <tr><th>Stratum</th><th>Sites</th><th>Species</th><th>Groups</th><th>Significant indicators</th><th>% Significant</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Trees</td><td>216</td><td>221</td><td>3</td><td>10</td><td>4.5</td></tr>
+                    <tr><td>Shrubs</td><td>194</td><td>101</td><td>3</td><td>15</td><td>14.9</td></tr>
+                    <tr><td>Herbs</td><td>206</td><td>134</td><td>3</td><td>10</td><td>7.5</td></tr>
+                    <tr><td>Regeneration</td><td>205</td><td>109</td><td>3</td><td>8</td><td>7.3</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper" id="table5">
+            <table>
+                <caption><b>Table 5:</b> Cross-validated performance of machine-learning models predicting regeneration richness across five folds. R² denotes coefficient of determination; RMSE, root mean square error; MAE, mean absolute error. Full fold-level output is provided in Appendix S7.</caption>
+                <thead>
+                    <tr><th>Model</th><th>Predictors</th><th>Obs.</th><th>CV R²</th><th>CV RMSE</th><th>CV MAE</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Random Forest</td><td>13</td><td>192</td><td>0.142 ± 0.040</td><td>1.165 ± 0.182</td><td>0.907</td></tr>
+                    <tr><td>XGBoost</td><td>13</td><td>192</td><td>-0.009 ± 0.096</td><td>1.261 ± 0.192</td><td>0.942</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FIGURES SECTION -->
+    <section id="figures-section">
+        <h2>Figures</h2>
+
+        <div class="figure" id="fig1">
+            <img src="assets/Figure01_Study_Area_Map.png" alt="Study Area Map">
+            <div class="caption"><b>Figure 1:</b> Study area and vegetation sampling plots in south-central Bhutan (Sarpang District). Green polygons indicate unmanaged forest areas and black points represent sampled vegetation plots along the elevational gradient.</div>
+        </div>
+
+        <div class="figure" id="fig2">
+            <img src="assets/Figure02_NMDS.png" alt="NMDS Ordination">
+            <div class="caption"><b>Figure 2:</b> Non-metric multidimensional scaling (NMDS) ordinations of vegetation plots for four strata: (A) trees, (B) shrubs, (C) herbs and (D) regeneration. Points represent sample plots coloured by forest type; polygons delineate convex hulls for each forest type. Red arrows indicate fitted environmental vectors significant at <i>p</i> &lt; 0.05 based on 999 permutations. Stress values are shown for each ordination.</div>
+        </div>
+
+        <div class="figure" id="fig3">
+            <img src="assets/Figure05_CCA.png" alt="CCA Ordination">
+            <div class="caption"><b>Figure 3:</b> Canonical correspondence analysis (CCA) biplots for (A) trees, (B) shrubs, (C) herbs and (D) regeneration. Points represent plots and arrows denote environmental predictors retained after variance inflation factor screening (threshold = 10). Arrow length indicates the strength of correlations with ordination axes.</div>
+        </div>
+
+        <div class="figure" id="fig4">
+            <img src="assets/Figure03_Diversity.png" alt="Diversity Patterns">
+            <div class="caption"><b>Figure 4:</b> Alpha-diversity metrics across vegetation strata. Panels show (A) species richness, (B) Shannon diversity (H'), (C) Simpson diversity (1 - D) and (D) Pielou's evenness (J). Boxplots depict medians and interquartile ranges; points represent individual plots.</div>
+        </div>
+
+        <div class="figure" id="fig5">
+            <img src="assets/Figure04_SpeciesAccumulation.png" alt="Species Accumulation">
+            <div class="caption"><b>Figure 5:</b> Sample-based species accumulation curves for herbs, regeneration, shrubs and trees. Solid lines indicate mean richness across random permutations; shaded envelopes show 95% confidence intervals.</div>
+        </div>
+
+        <div class="figure" id="fig6">
+            <img src="assets/Figure07_Diversity_Elevation.png" alt="Diversity along Elevation">
+            <div class="caption"><b>Figure 6:</b> Variation in plot-level species richness along the elevational gradient for herbs, regeneration, shrubs and trees. Curves represent locally weighted regression fits with 95% confidence bands.</div>
+        </div>
+
+        <div class="figure" id="fig7">
+            <img src="assets/Figure06_RF_Importance.png" alt="RF Importance">
+            <div class="caption"><b>Figure 7:</b> Random-forest variable-importance ranking for predictors of regeneration richness. Bars show percentage increase in mean squared error (%IncMSE) following permutation of each variable during five-fold cross-validation. Higher values indicate stronger influence on predictive accuracy.</div>
+        </div>
+    </section>
+
+    <!-- SUPPORTING INFORMATION -->
+    <section id="supporting-info">
+        <h2>Supporting Information</h2>
+        <p>Additional supporting information may be found online in the Supporting Information section:</p>
+        <ul>
+            <li><a href="supporting/Appendix_S01_VIF_all_strata.csv">Appendix S1</a>. Variance inflation factor screening by stratum.</li>
+            <li><a href="supporting/Appendix_S02_PERMANOVA_full.csv">Appendix S2</a>. Full PERMANOVA and dispersion outputs.</li>
+            <li><a href="supporting/Appendix_S03_envfit_all.csv">Appendix S3</a>. Envfit results for all strata.</li>
+            <li><a href="supporting/Appendix_S04_indicator_species_full.csv">Appendix S4</a>. Indicator species list.</li>
+            <li><a href="supporting/Appendix_S05_ML_parameters.csv">Appendix S5</a>. Machine-learning model parameters.</li>
+            <li><a href="supporting/Appendix_S06_variable_importance.csv">Appendix S6</a>. Variable importance outputs.</li>
+            <li><a href="supporting/Appendix_S07_CV_fold_results.csv">Appendix S7</a>. Cross-validation fold results.</li>
+            <li><a href="supporting/Appendix_S08_diversity_correlations.csv">Appendix S8</a>. Diversity correlation matrix.</li>
+            <li><a href="supporting/Appendix_S09_beta_diversity.csv">Appendix S9</a>. Beta diversity metrics.</li>
+            <li><a href="supporting/Appendix_S10_matrix_diagnostics.csv">Appendix S10</a>. Community matrix diagnostics.</li>
+        </ul>
+    </section>
+
+    <!-- META SECTIONS -->
+    <section id="funding" class="meta-section">
+        <h3>Funding</h3>
+        <p>This research received no specific external funding. Institutional support was provided through routine government research and conservation monitoring programs of the Department of Forests and Park Services, Royal Government of Bhutan.</p>
+    </section>
+
+    <section id="acknowledgements" class="meta-section">
+        <h3>Acknowledgements</h3>
+        <p>The authors acknowledge the Department of Forests and Park Services, Royal Government of Bhutan, for facilitating access to protected-area spatial datasets and supporting national-scale vegetation assessments. The authors further thank colleagues involved in protected-area management and ecological corridor planning whose long-term conservation efforts underpin the spatial and ecological datasets used in this study.</p>
+    </section>
+
+    <section id="author-contributions" class="meta-section">
+        <h3>Author Contributions</h3>
+        <p><strong>Wangdi Wangdi:</strong> Conceptualization; Methodology; Software; Formal analysis; Data curation; Visualization; Writing – original draft; Writing – review &amp; editing.<br>
+        <strong>Rupesh Subedi:</strong> Methodology; Software; Formal analysis; Data curation; Visualization; Supervision; Conceptual refinement; Writing – review &amp; editing.<br>
+        <strong>Kezang Choden:</strong> Field coordination; Data validation; Writing – review &amp; editing.</p>
+    </section>
+
+    <section id="data-availability" class="meta-section">
+        <h3>Data Availability Statement</h3>
+        <p>The data supporting the findings of this study are available in the Supporting Information (Appendices S1–S10). Processed community matrices, environmental predictors, and statistical outputs are archived in the project repository accompanying this submission. A public repository with a DOI will be provided upon manuscript acceptance to ensure reproducibility and transparency.</p>
+    </section>
+
+    <section id="conflict-of-interest" class="meta-section">
+        <h3>Conflict of Interest</h3>
+        <p>The authors declare no competing financial or non-financial interests.</p>
+    </section>
+
+</main>
+
+</body>
+</html>

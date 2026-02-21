@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S3 - Envfit Results</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S3: Envfit Results for All Strata</h1>
+        <p>Environmental vector fitting results for NMDS ordinations. Significance assessed using 999 permutations. Only vectors significant at <i>p</i> &lt; 0.05 are shown in ordination biplots.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S03_envfit_all.csv" class="download-link">Appendix_S03_envfit_all.csv</a></p>
+        
+        <h2>NMDS Stress Values</h2>
+        <table>
+            <thead><tr><th>Stratum</th><th>Stress</th><th>Interpretation</th></tr></thead>
+            <tbody>
+                <tr><td>Trees</td><td>0.0001</td><td>Excellent fit (near-zero due to matrix properties)</td></tr>
+                <tr><td>Shrubs</td><td>0.070</td><td>Good fit</td></tr>
+                <tr><td>Herbs</td><td>0.001</td><td>Excellent fit (near-zero due to matrix properties)</td></tr>
+                <tr><td>Regeneration</td><td>0.0006</td><td>Excellent fit (near-zero due to matrix properties)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Notes on Near-Zero Stress Values</h2>
+        <p>The near-zero stress values for trees, herbs, and regeneration likely arise from matrix properties that ease low-dimensional rank fitting (for example, high tied dissimilarities and sparse compositional structure). Ordinations were therefore interpreted conservatively as broad summaries rather than precise geometric distances.</p>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

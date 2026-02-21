@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S10 - Community Matrix Diagnostics</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S10: Community Matrix Diagnostics</h1>
+        <p>Summary statistics and diagnostic metrics for vegetation community matrices by stratum, including species richness, plot counts, and matrix properties relevant to ordination analyses.</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S10_matrix_diagnostics.csv" class="download-link">Appendix_S10_matrix_diagnostics.csv</a></p>
+        
+        <h2>Matrix Properties by Stratum</h2>
+        <table>
+            <thead>
+                <tr><th>Metric</th><th>Trees</th><th>Shrubs</th><th>Herbs</th><th>Regeneration</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Total plots</td><td>221</td><td>198</td><td>210</td><td>209</td></tr>
+                <tr><td>Plots in analysis</td><td>216</td><td>194</td><td>206</td><td>205</td></tr>
+                <tr><td>Total species</td><td>221</td><td>101</td><td>134</td><td>109</td></tr>
+                <tr><td>Mean species/plot</td><td>5.30</td><td>4.77</td><td>1.79</td><td>2.00</td></tr>
+                <tr><td>SD species/plot</td><td>2.57</td><td>3.43</td><td>1.32</td><td>1.26</td></tr>
+                <tr><td>Matrix fill (%)</td><td>11.2</td><td>15.8</td><td>4.9</td><td>6.1</td></tr>
+                <tr><td>Zero inflation</td><td>High</td><td>Moderate</td><td>Very high</td><td>High</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Implications for Ordination</h2>
+        <p>The near-zero NMDS stress values for trees, herbs, and regeneration likely arise from matrix properties that ease low-dimensional rank fitting:</p>
+        <ul>
+            <li><strong>High tied dissimilarities:</strong> Many plot pairs have identical or near-identical species composition due to sparse matrices.</li>
+            <li><strong>Sparse compositional structure:</strong> Low matrix fill percentages (4.9–15.8%) result in many zero dissimilarities.</li>
+            <li><strong>Zero inflation:</strong> Particularly pronounced in herbs and regeneration strata.</li>
+        </ul>
+        
+        <p>These properties were considered when interpreting ordination results, and NMDS patterns were cross-checked against PERMANOVA, dispersion tests, and constrained ordination.</p>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>

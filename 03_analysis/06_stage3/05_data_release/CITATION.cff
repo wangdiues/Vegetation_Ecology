@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Vegetation Ecology Analysis Pipeline"
+version: 0.1.0
+date-released: 2025-02-05
+authors:
+  - family-names: ""
+    given-names: ""
+    orcid: ""
+repository-code: ""
+license: MIT
+keywords:
+  - vegetation ecology
+  - community analysis
+  - ordination
+  - R

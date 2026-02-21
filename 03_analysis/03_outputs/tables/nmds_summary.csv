@@ -1,0 +1,5 @@
+stratum,n_sites,n_species,stress,converged,n_sig_env_vectors
+Trees,221,222,9.187573377577248e-5,3,0
+Shrubs,198,101,0.07041198498580742,0,6
+Herbs,210,134,0.0010258207604325411,0,3
+Regen,209,109,5.78623001083563e-4,0,0

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix S9 - Beta Diversity Metrics</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; background: #f5f7fa; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h2 { color: #003366; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .back-link { display: inline-block; margin-top: 30px; color: #003366; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .download-link { color: #b30000; text-decoration: none; }
+        .download-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appendix S9: Beta Diversity Metrics</h1>
+        <p>Whittaker's beta diversity (β<sub>W</sub>) calculated as γ/α - 1, where γ is gamma richness (regional species pool) and α is mean alpha diversity (mean species per plot).</p>
+        
+        <p><strong>Download raw data:</strong> <a href="Appendix_S09_beta_diversity.csv" class="download-link">Appendix_S09_beta_diversity.csv</a></p>
+        
+        <h2>Beta Diversity by Stratum</h2>
+        <table>
+            <thead>
+                <tr><th>Stratum</th><th>Mean Alpha</th><th>Gamma Richness</th><th>Whittaker's β</th><th>Interpretation</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Herbs</td><td>1.79</td><td>134</td><td>75.04</td><td>Very high turnover</td></tr>
+                <tr><td>Regeneration</td><td>2.00</td><td>109</td><td>54.63</td><td>High turnover</td></tr>
+                <tr><td>Trees</td><td>5.30</td><td>222</td><td>41.86</td><td>Moderate-high turnover</td></tr>
+                <tr><td>Shrubs</td><td>4.77</td><td>114</td><td>23.89</td><td>Moderate turnover</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Interpretation</h2>
+        <p>Beta diversity (Whittaker's β) was highest for herbs (75.04), followed by regeneration (54.63), trees (41.86) and shrubs (23.89), indicating pronounced species turnover in the herb layer relative to the regional species pool. This pattern implies that small-scale environmental mosaics, rather than smooth elevational forcing, structure ground-layer communities.</p>
+        
+        <h3>CCA Constrained Inertia (Related Analysis)</h3>
+        <table>
+            <thead>
+                <tr><th>Stratum</th><th>Total Inertia</th><th>Constrained</th><th>% Explained</th><th>p-value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Trees</td><td>35.117</td><td>1.109</td><td>3.2</td><td>0.008</td></tr>
+                <tr><td>Shrubs</td><td>27.832</td><td>1.045</td><td>3.8</td><td>0.001</td></tr>
+                <tr><td>Herbs</td><td>68.475</td><td>2.309</td><td>3.4</td><td>0.125</td></tr>
+                <tr><td>Regeneration</td><td>58.906</td><td>1.987</td><td>3.4</td><td>0.076</td></tr>
+            </tbody>
+        </table>
+
+        <a href="../index.html#supporting-info" class="back-link">← Back to main manuscript</a>
+    </div>
+</body>
+</html>
