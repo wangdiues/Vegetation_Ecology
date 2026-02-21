@@ -33,7 +33,7 @@ jobs:
           enablement: true
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "08_manuscript_html/FINAL_HTML_PACKAGE"
 
