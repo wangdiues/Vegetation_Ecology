@@ -1,3 +1,0 @@
-model,n_predictors,n_observations,cv_r2,cv_rmse,cv_mae
-Random Forest,13,192,0.142 +/- 0.04,1.165 +/- 0.182,0.907
-XGBoost,13,192,-0.009 +/- 0.096,1.261 +/- 0.192,0.942
